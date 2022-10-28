@@ -2,7 +2,7 @@ import requests
 from pprint import pprint
 from datetime import datetime
 
-API_KEY = "381c48e50002caee9de8457345664a27"
+API_KEY = input("Kerem az API kulcsot: ")
 
 def get_weather(city):
     try:
