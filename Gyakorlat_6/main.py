@@ -56,8 +56,8 @@ def sunrise_sunset(city):
         resp = requests.get(URL, params=payload)
         resp = resp.json()
         for elem in resp:
-            sunrise = resp["sys"]["sunrise"] + 7200
-            sunset = resp["sys"]["sunset"] + 7200
+            sunrise = resp["sys"]["sunrise"]
+            sunset = resp["sys"]["sunset"]
         return f"A napfelkelte:{datetime.fromtimestamp(sunrise)} Napnyugta:{datetime.fromtimestamp(sunset)}"
     except:
         return "Nem létező hely vagy számot adtál meg"
