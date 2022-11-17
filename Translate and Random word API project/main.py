@@ -10,7 +10,7 @@ url="https://random-word-api.herokuapp.com/word"
 english_word=requests.get(url).text
 
 life_number=3
-pontszam=0
+score=0
 
 while life_number > 0:
     english_word = str(english_word)
@@ -19,13 +19,13 @@ while life_number > 0:
     hu_en = translator.translate_text(hungary_word, source_lang="HU", target_lang="EN-US")
     en_hu = translator.translate_text(english_word, source_lang="EN", target_lang="HU")
     if english_word == hu_en:
-        pontszam+=1
+        score+=1
     else:
         english_word=requests.get(url).text
         life_number-=1
 
 print ("A játék vége.")
-print (f"Pontszám: {pontszam}")
+print (f"Pontszám: {score}")
 print (f"Életek száma:{life_number}")
 
 
