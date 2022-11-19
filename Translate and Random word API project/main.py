@@ -16,9 +16,8 @@ while life_number > 0:
     english_word = str(english_word)
     print (f"A kitalálandó szó: {english_word}")
     hungary_word = str(input("Kerem a fordítását:"))
-    hu_en = translator.translate_text(hungary_word, source_lang="HU", target_lang="EN-US")
-    en_hu = translator.translate_text(english_word, source_lang="EN", target_lang="HU")
-    if english_word == hu_en:
+    en_hu = str(translator.translate_text(english_word, source_lang="EN", target_lang="HU"))
+    if hungary_word == en_hu:
         score+=1
     else:
         english_word=requests.get(url).text
@@ -27,5 +26,3 @@ while life_number > 0:
 print ("A játék vége.")
 print (f"Pontszám: {score}")
 print (f"Életek száma:{life_number}")
-
-
